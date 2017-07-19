@@ -1,0 +1,57 @@
+/**
+ * WARNING: If you are changing something in this file be sure that all CSS selectors
+ * are properly updated in all files and folders bellow:
+ *   1. source/Admin/Notices
+ *   2. source/Admin/Prototypes/Notices
+ *   3. source/Admin/Service/PHPVersionNotice.php
+ */
+@import "sign-in.less";
+
+.@{plugin-prefix}-notice-large {
+  padding: 10px 20px !important;
+}
+
+.@{plugin-prefix}-notice-title {
+  line-height: normal;
+}
+
+/* Only for WordPress 3.8.x, 3.9.x, 4.0.x */
+body.branch-4,
+body.branch-3-9,
+body.branch-3-8 {
+
+  .@{plugin-prefix}-notice {
+    background: #fff;
+    border-left: 4px solid #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+    box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+    margin: 5px 15px 2px 2px;
+    padding: 1px 12px;
+  }
+
+  .@{plugin-prefix}-notice-title {
+    font-size: 18px;
+  }
+
+  .@{plugin-prefix}-notice p,
+  .@{plugin-prefix}-notice-title {
+    margin: 0.5em 0;
+    padding: 2px;
+  }
+
+  .@{plugin-prefix}-notice-success {
+    border-left-color: #46b450;
+  }
+
+  .@{plugin-prefix}-notice-warning {
+    border-left-color: #ffb900;
+  }
+
+  .@{plugin-prefix}-notice-error {
+    border-left-color: #dc3232;
+  }
+
+  .@{plugin-prefix}-notice-info {
+    border-left-color: #00a0d2;
+  }
+}

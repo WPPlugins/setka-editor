@@ -1,0 +1,42 @@
+<div class="wrap">
+    {% include 'admin/settings/common/page-title.html.twig' %}
+
+    {% include 'admin/settings/common/page-tabs.html.twig' %}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <table class="form-table setka-editor-form-table">
+        <tbody>
+        <tr id="{{ form.token.vars.id ~ '_wrapper' }}">
+            <th scope="row">
+                {{ form_label(form.token) }}
+            </th>
+            <td>
+                {{ form_widget(form.token) }}
+                {% if not form.token.vars.valid %}
+                    <div class="setka-editor-form-errors">
+                        {{ form_errors(form.token) }}
+                    </div>
+                {% endif %}
+                {% if signedIn %}
+                    <div class="setka-editor-width-like-input-regular-text">
+                        <div class="notice setka-editor-notice notice-success setka-editor-notice-success inline">
+                            <p>{{ translations.already_signed_in }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </td>
+        </tr>
+        <tr id="{{ form.submitToken.vars.id ~ '_wrapper' }}">
+            <th>
+
+            </th>
+            <td>
+                {{ form_row(form.submitToken) }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    {{ form_end(form) }}
+</div>

@@ -1,0 +1,60 @@
+<div class="wrap">
+
+    {% use 'admin/settings/common/wordpress-settings-parts.html.twig' %}
+
+    {% form_theme form 'admin/settings/common/checkboxes-in-fieldset.html.twig' %}
+
+    {{ block('wordpress_page_title') }}
+
+    {{ block('wordpress_page_tabs') }}
+
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ block('wordpress_form_table_start') }}
+            {{ block('wordpress_form_table_tr_start') }}
+
+                {{ block('wordpress_form_table_th_start') }}
+                    {{ form_label(form.post_types) }}
+                {{ block('wordpress_form_table_th_end') }}
+
+                {{ block('wordpress_form_table_td_start') }}
+                    <p>{{ translations.post_types_description }}</p>
+                    <hr>
+                    {{ form_widget(form.post_types) }}
+                {{ block('wordpress_form_table_td_end') }}
+
+            {{ block('wordpress_form_table_tr_end') }}
+
+            {{ block('wordpress_form_table_tr_start') }}
+
+                {{ block('wordpress_form_table_th_start') }}
+                    {{ form_label(form.roles) }}
+                {{ block('wordpress_form_table_th_end') }}
+
+                {{ block('wordpress_form_table_td_start') }}
+                    <p>{{ translations.roles_description|striptags('<code>, <a>')|format('<code>'~translations.roles_capability~'</code>')|raw }}</p>
+                    <hr>
+                    {{ form_widget(form.roles) }}
+                {{ block('wordpress_form_table_td_end') }}
+
+            {{ block('wordpress_form_table_tr_end') }}
+
+            {{ block('wordpress_form_table_tr_start') }}
+
+                {{ block('wordpress_form_table_th_start') }}
+                    {{ form_label(form.white_label) }}
+                {{ block('wordpress_form_table_th_end') }}
+
+                {{ block('wordpress_form_table_td_start') }}
+                    <label>{{ form_widget(form.white_label) }}{{ translations.white_label }}</label>
+                {{ block('wordpress_form_table_td_end') }}
+
+            {{ block('wordpress_form_table_tr_end') }}
+
+        {{ block('wordpress_form_table_end')  }}
+
+        <p class="submit">{{ form_widget(form.submit) }}</p>
+
+    {{ form_end(form) }}
+</div>

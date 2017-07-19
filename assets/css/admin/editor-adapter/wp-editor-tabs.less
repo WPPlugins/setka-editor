@@ -1,0 +1,73 @@
+/**
+ * Editor tabs (TinyMCE, Text, Grid Editor).
+ */
+.@{plugin-prefix}-switch-editor {
+
+  @media screen and (max-width:782px) {
+    font-size: 16px;
+    line-height: 1em;
+    margin: 7px 0 0 7px;
+    padding: 8px 12px
+  }
+
+  // Copied from WordPress
+  float: left;
+  box-sizing: content-box;
+  top: 1px;
+  background: #ebebeb;
+  color: #777;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 19px;
+  height: 20px;
+  margin: 5px 0 0 5px;
+  padding: 3px 8px 4px;
+  border: 1px solid #e5e5e5;
+  position: relative;
+
+  &:active {
+    background-color: #f5f5f5;
+    box-shadow: none
+  }
+
+  .@{plugin-prefix}-active & {
+    background: #f5f5f5;
+    color: #555;
+    border-bottom-color: #f5f5f5;
+  }
+
+  &-muted {
+    opacity: .5;
+
+    &:active {
+      background-color: #ebebeb !important;
+    }
+  }
+}
+
+.@{plugin-prefix}-active {
+
+  .stk-editor {
+
+  }
+
+  .wp-editor-tools {
+    border-bottom: 1px solid #e5e5e5;
+  }
+}
+
+/**
+ * Editor Expand
+ */
+.@{plugin-prefix}-active {
+  padding-top: 0 !important;
+
+  .wp-editor-tools {
+    /**
+     * Fixes for editorExpand then Setka Editor active.
+     */
+    position: relative !important;
+    top: 0 !important;
+    width: auto !important;
+  }
+}

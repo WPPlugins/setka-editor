@@ -1,0 +1,10 @@
+{#
+    Template for rendering all default settings fields on WordPress settins pages.
+#}
+{% spaceless %}
+    {% form_theme form 'admin/settings/common/checkboxes-in-fieldset.html.twig' %}
+
+    {%- for child in form.children %}
+        {{ form_widget(child) }}
+    {% endfor -%}
+{% endspaceless %}

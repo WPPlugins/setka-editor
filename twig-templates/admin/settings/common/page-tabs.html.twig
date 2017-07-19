@@ -1,0 +1,9 @@
+{%- block wordpress_page_tabs -%}
+    {%- if page.getTabs -%}
+        <h2 class="nav-tab-wrapper wp-clearfix">
+            {%- for tab in page.getTabs -%}
+                <a href="{{ tab.getUrl }}" id="" class="nav-tab{{ tab.isActive ? ' nav-tab-active' : '' }}">{{ tab.getTitle }}</a>
+            {%- endfor -%}
+        </h2>
+    {%- endif -%}
+{%- endblock wordpress_page_tabs -%}

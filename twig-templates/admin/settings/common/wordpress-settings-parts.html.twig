@@ -1,0 +1,62 @@
+{%- block wordpress_page_tabs -%}
+    {%- if page.getTabs -%}
+        <h2 class="nav-tab-wrapper wp-clearfix">
+            {%- for tab in page.getTabs -%}
+                <a href="{{ tab.getUrl }}" id="" class="nav-tab{{ tab.isActive ? ' nav-tab-active' : '' }}">{{ tab.getTitle }}</a>
+            {%- endfor -%}
+        </h2>
+    {%- endif -%}
+{%- endblock wordpress_page_tabs -%}
+
+{%- block wordpress_page_title -%}
+    {%- if page.getPageTitle -%}
+        <h2>{{ page.getPageTitle }}</h2>
+    {%- endif -%}
+{%- endblock wordpress_page_title -%}
+
+
+
+
+{%- block wordpress_form_table_start -%}
+    <table class="form-table">
+{%- endblock wordpress_form_table_start -%}
+
+{%- block wordpress_form_table_end -%}
+    </table>
+{%- endblock wordpress_form_table_end -%}
+
+
+
+
+
+{%- block wordpress_form_table_tr_start -%}
+    <tr>
+{%- endblock wordpress_form_table_tr_start -%}
+
+{%- block wordpress_form_table_tr_end -%}
+    </tr>
+{%- endblock wordpress_form_table_tr_end -%}
+
+
+
+
+
+{%- block wordpress_form_table_th_start -%}
+    <th scope="row">
+{%- endblock wordpress_form_table_th_start -%}
+
+{%- block wordpress_form_table_th_end -%}
+    </th>
+{%- endblock wordpress_form_table_th_end -%}
+
+
+
+
+
+{%- block wordpress_form_table_td_start -%}
+    <td>
+{%- endblock wordpress_form_table_td_start -%}
+
+{%- block wordpress_form_table_td_end -%}
+    </td>
+{%- endblock wordpress_form_table_td_end -%}

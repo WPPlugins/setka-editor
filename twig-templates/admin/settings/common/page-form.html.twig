@@ -1,0 +1,5 @@
+<form action="options.php" method="post">
+    {{ fn.settings_fields(page.getOptionGroup) }}
+    {{ fn.do_settings_sections(page.getMenuSlug) }}
+    {{ fn.submit_button }}
+</form>

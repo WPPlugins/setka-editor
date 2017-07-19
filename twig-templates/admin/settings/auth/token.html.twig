@@ -1,0 +1,10 @@
+{%- for child in form.children %}
+    {{ form_widget(child) }}
+{% endfor -%}
+{% if signed_in == true %}
+    <div class="setka-editor-width-like-input-regular-text">
+        <div class="notice notice-success inline">
+            <p>{{ fn.__('You have already started the plugin.', 'setka-editor') }}</p>
+        </div>
+    </div>
+{% endif %}

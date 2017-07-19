@@ -1,0 +1,36 @@
+// Overwrite Wordpress admin theme styles
+.wp-admin {
+
+  .stk-editor {
+
+    p {
+      margin-top: 0;
+    }
+
+    input[type="text"] {
+      box-shadow: none !important;
+      margin: 0;
+      border: 1px solid #eee;
+      &:focus {
+        border-color: #eee;
+      }
+    }
+
+    .stk-ui__checkbox {
+      border: 0 !important;
+      box-shadow: none !important;
+      -webkit-appearance: checkbox !important;
+      &::before {
+        display: none;
+      }
+    }
+
+    .stk-post-html__content {
+      margin-top: 50px; margin-bottom: 20px;
+    }
+
+    .ge-tool__caption {
+      font-size: 11px;
+    }
+  }
+}

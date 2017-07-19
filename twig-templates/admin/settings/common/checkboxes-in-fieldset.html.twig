@@ -1,0 +1,18 @@
+{#
+    This template for WordPress settings presented as checkboxes which needs a fieldset wrap.
+    <fieldset> adds more space between lines (defined in WordPress css files).
+
+    By default Symfony Forms don't have fieldset component so we just a little
+    update the starter template with this file.
+#}
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+        <fieldset>
+            {%- for child in form %}
+                {{- form_widget(child) -}}
+                {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
+                <br>
+            {% endfor -%}
+        </fieldset>
+    </div>
+{%- endblock choice_widget_expanded -%}

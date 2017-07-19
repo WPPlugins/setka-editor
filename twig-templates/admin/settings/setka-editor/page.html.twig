@@ -1,0 +1,238 @@
+<div class="wrap">
+    {% include 'admin/settings/common/page-title.html.twig' %}
+
+    {% include 'admin/settings/common/page-tabs.html.twig' %}
+
+    {{ form_start(form) }}
+
+    {{ form_errors(form) }}
+
+    <p class="setka-editor-intro-message">{{ translations.start }}</p>
+
+    <div id="{{ form.accountType.vars.id ~ '_wrapper' }}">
+        <ul class="setka-editor-inline-list">
+            {% for type in form.accountType %}
+                <li>
+                    {{- form_widget(type) -}}
+                    {{- form_label(type) -}}
+                </li>
+
+            {% endfor %}
+        </ul>
+        {% for type in form.accountType %}
+            {% if not type.vars.valid %}
+                <div class="setka-editor-form-errors">
+                    {{- form_errors(type) -}}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <table class="form-table setka-editor-form-table">
+        <tbody>
+            <tr id="{{ form.email.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.email) }}
+                    <span class="setka-editor-sub-caption">{{ translations.email_sub_label }}</span>
+                </th>
+                <td>
+                    {{ form_widget(form.email) }}
+                    {% if not form.email.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.email) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.firstName.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.firstName) }}
+                </th>
+                <td>
+                    {{ form_widget(form.firstName) }}
+                    {% if not form.firstName.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.firstName) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.lastName.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.lastName) }}
+                </th>
+                <td>
+                    {{ form_widget(form.lastName) }}
+                    {% if not form.lastName.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.lastName) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.region.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.region) }}
+                </th>
+                <td>
+                    {{ form_widget(form.region) }}
+                    {% if not form.region.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.region) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.companyDomain.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.companyDomain) }}
+                </th>
+                <td>
+                    {{ form_widget(form.companyDomain) }}
+                    {% if not form.companyDomain.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.companyDomain) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.companyName.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.companyName) }}
+                </th>
+                <td>
+                    {{ form_widget(form.companyName) }}
+                    {% if not form.companyName.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.companyName) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.companySize.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.companySize) }}
+                </th>
+                <td>
+                    {{ form_widget(form.companySize) }}
+                    {% if not form.companySize.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.companySize) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.companyDepartment.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.companyDepartment) }}
+                </th>
+                <td>
+                    {{ form_widget(form.companyDepartment) }}
+                    {% if not form.companyDepartment.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.companyDepartment) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.password.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.password) }}
+                    <span class="setka-editor-sub-caption">{{ translations.password_sub_label }}</span>
+                </th>
+                <td>
+                    {{ form_widget(form.password) }}
+                    {% if not form.password.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.password) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.token.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+                    {{ form_label(form.token) }}
+                </th>
+                <td>
+                    {{ form_widget(form.token) }}
+                    {% if not form.token.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.token) }}
+                        </div>
+                    {% endif %}
+                    {% if signedIn %}
+                        <div class="setka-editor-width-like-input-regular-text">
+                            <div class="notice setka-editor-notice notice-success setka-editor-notice-success inline">
+                                <p>{{ translations.already_signed_in }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.termsAndConditions.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+
+                </th>
+                <td>
+                    {{ form_widget(form.termsAndConditions) }}
+                    {{ form_label(form.termsAndConditions) }}
+                    <div>
+                        {{ translations.terms_and_conditions|raw }}
+                    </div>
+                    <div>
+                        {{ translations.privacy_policy|raw }}
+                    </div>
+                    {% if not form.termsAndConditions.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.termsAndConditions) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.whiteLabel.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+
+                </th>
+                <td>
+                    {{ form_widget(form.whiteLabel) }}
+                    {{ form_label(form.whiteLabel) }}
+                    {% if not form.whiteLabel.vars.valid %}
+                        <div class="setka-editor-form-errors">
+                            {{ form_errors(form.whiteLabel) }}
+                        </div>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr id="{{ form.submitToken.vars.id ~ '_wrapper' }}">
+                <th scope="row">
+
+                </th>
+                <td>
+                    {{ form_row(form.submitToken) }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="{{ form.submit.vars.id ~ '_wrapper' }}" class="setka-editor-form-submit">
+        {{ form_row(form.submit) }}
+    </div>
+
+    <div id="{{ form.submitCompany.vars.id ~ '_wrapper' }}" class="setka-editor-form-submit">
+        {{ form_row(form.submitCompany) }}
+    </div>
+
+    {{ form_end(form) }}
+</div>
